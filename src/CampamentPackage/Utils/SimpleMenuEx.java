@@ -16,6 +16,7 @@ public class SimpleMenuEx extends JFrame {
         createMenuBar();
         createBackGround();
 
+        setIconImage(new ImageIcon("src/resources/icon.png").getImage());
         setTitle("IGMC - Increïble Gestor de Menjars de Campament");
         setSize(680, 330);
         setLocationRelativeTo(null);
