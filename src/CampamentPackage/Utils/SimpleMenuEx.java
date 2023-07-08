@@ -51,6 +51,9 @@ public class SimpleMenuEx extends JFrame {
         var localMenu = new JMenu("Localitzacions");
         localMenu.setMnemonic(KeyEvent.VK_L);
 
+        var personMenu = new JMenu("Assistents");
+        localMenu.setMnemonic(KeyEvent.VK_S);
+
         var recipeMenu = new JMenu("Receptes");
         recipeMenu.setMnemonic(KeyEvent.VK_R);
 
@@ -116,6 +119,44 @@ public class SimpleMenuEx extends JFrame {
         editLocalItem.addActionListener(e -> editLocalitzacio());
 
         localMenu.add(editLocalItem);
+
+        // Assistents
+        var checkPersonItem = new JMenuItem("Llistat..", listIcon);
+        checkPersonItem.setMnemonic(KeyEvent.VK_L);
+        checkPersonItem.setToolTipText("Obre Llistat Persones Assistents");
+        checkPersonItem.addActionListener(e -> checkPersones());
+
+        personMenu.add(checkPersonItem);
+        personMenu.addSeparator();
+
+        var addInstructorItem = new JMenuItem("Nou Monitor..", addIcon);
+        addInstructorItem.setMnemonic(KeyEvent.VK_M);
+        addInstructorItem.setToolTipText("Afegeix Monitor Nou");
+        addInstructorItem.addActionListener(e -> addInstructor());
+
+        personMenu.add(addInstructorItem);
+
+        var editInstructorItem = new JMenuItem("Edita Monitor..", editIcon);
+        editInstructorItem.setMnemonic(KeyEvent.VK_O);
+        editInstructorItem.setToolTipText("Modifica Monitor");
+        editInstructorItem.addActionListener(e -> editInstructor());
+
+        personMenu.add(editInstructorItem);
+
+        var addParticipantItem = new JMenuItem("Nou Participant..", addIcon);
+        addParticipantItem.setMnemonic(KeyEvent.VK_P);
+        addParticipantItem.setToolTipText("Afegeix Participant Nou");
+        addParticipantItem.addActionListener(e -> addParticipant());
+
+        personMenu.add(addParticipantItem);
+
+        var editParticipantItem = new JMenuItem("Edita Participant..", editIcon);
+        editParticipantItem.setMnemonic(KeyEvent.VK_A);
+        editParticipantItem.setToolTipText("Modifica Participant");
+        editParticipantItem.addActionListener(e -> editParticipant());
+
+        personMenu.add(editParticipantItem);
+
 
         // Receptes
         var checkReceptaItem = new JMenuItem("Llistat..", listIcon);
@@ -204,6 +245,7 @@ public class SimpleMenuEx extends JFrame {
         menuBar.add(fileMenu);
         menuBar.add(campMenu);
         menuBar.add(localMenu);
+        menuBar.add(personMenu);
         menuBar.add(recipeMenu);
         menuBar.add(alimMenu);
         menuBar.add(Box.createHorizontalGlue());
@@ -211,6 +253,21 @@ public class SimpleMenuEx extends JFrame {
         menuBar.add(helpMenu);
 
         setJMenuBar(menuBar);
+    }
+
+    private void checkPersones() {
+    }
+
+    private void addInstructor() {
+    }
+
+    private void editInstructor() {
+    }
+
+    private void addParticipant() {
+    }
+
+    private void editParticipant() {
     }
 
     private void deleteCamp() {
