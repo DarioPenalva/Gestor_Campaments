@@ -12,6 +12,7 @@ public class SimpleMenuEx extends JFrame {
     Icon editIcon = new ImageIcon("src/resources/edit.png");
     Icon reloadIcon = new ImageIcon("src/resources/reload.png");
     Icon deleteIcon = new ImageIcon("src/resources/delete.png");
+    Icon helpIcon = new ImageIcon("src/resources/help.png");
     public SimpleMenuEx() {
 
         createMenuBar();
@@ -46,8 +47,8 @@ public class SimpleMenuEx extends JFrame {
         JMenu localMenu = new JMenu("Localitzacions");
         localMenu.setMnemonic(KeyEvent.VK_L);
 
-        JMenu personMenu = new JMenu("Assistents");
-        personMenu.setMnemonic(KeyEvent.VK_S);
+//        JMenu personMenu = new JMenu("Assistents");
+//        personMenu.setMnemonic(KeyEvent.VK_S);
 
         JMenu recipeMenu = new JMenu("Receptes");
         recipeMenu.setMnemonic(KeyEvent.VK_R);
@@ -116,7 +117,7 @@ public class SimpleMenuEx extends JFrame {
         localMenu.add(editLocalItem);
 
         // Assistents
-        JMenuItem checkPersonItem = new JMenuItem("Llistat..", listIcon);
+    /*    JMenuItem checkPersonItem = new JMenuItem("Llistat..", listIcon);
         checkPersonItem.setMnemonic(KeyEvent.VK_L);
         checkPersonItem.setToolTipText("Obre Llistat Persones Assistents");
         checkPersonItem.addActionListener(e -> checkPersones());
@@ -151,7 +152,7 @@ public class SimpleMenuEx extends JFrame {
         editParticipantItem.addActionListener(e -> editParticipant());
 
         personMenu.add(editParticipantItem);
-
+*/
         // Receptes
         JMenuItem checkReceptaItem = new JMenuItem("Llistat..", listIcon);
         checkReceptaItem.setMnemonic(KeyEvent.VK_L);
@@ -235,7 +236,7 @@ public class SimpleMenuEx extends JFrame {
         deleteMenu.add(deleteIngredientItem);
 
         // Ajuda
-        JMenuItem helpItem = new JMenuItem("Obtenir Suport", listIcon);
+        JMenuItem helpItem = new JMenuItem("Obtenir Suport", helpIcon);
         helpItem.setMnemonic(KeyEvent.VK_O);
         helpItem.setToolTipText("La solució.");
         helpItem.addActionListener(e -> checkAjuda());
@@ -246,7 +247,7 @@ public class SimpleMenuEx extends JFrame {
         menuBar.add(fileMenu);
         menuBar.add(campMenu);
         menuBar.add(localMenu);
-        menuBar.add(personMenu);
+//        menuBar.add(personMenu);
         menuBar.add(recipeMenu);
         menuBar.add(alimMenu);
         menuBar.add(Box.createHorizontalGlue());
@@ -321,7 +322,7 @@ public class SimpleMenuEx extends JFrame {
         //Si es tria una opció:
         if ((s != null) && (s.length() > 0)) {
             JOptionPane.showMessageDialog(ventanaSecundaria,
-                    "Has triat " + s ,
+                    "Has triat '" + s + "'",
                     "Ingredient Triat",
                     JOptionPane.INFORMATION_MESSAGE);
             return;
